@@ -105,4 +105,21 @@ export default class LinkedList {
         return strToPrint;
     }
 
+    remove(index) {
+        let size = this.size();
+        if (index > this.size() - 1 || index < 0)
+            throw new Error('The given index is not within the bounds of the linked list.');
+        if (index === 0)
+            this.#head = this.#head.nextNode;
+        if (index > 0) {
+            let node = this.at(index - 1);
+            let nextNode;
+            if (size - 1 - index > 0)
+                nextNode = this.at(index + 1);
+            else
+                nextNode = null;
+            node.nextNode = nextNode;
+        }
+
+    }
 }
