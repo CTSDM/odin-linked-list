@@ -63,7 +63,7 @@ export default class LinkedList {
 
     pop() {
         if (this.size() === 1)
-            this.head = null;
+            this.#head = null;
         if (this.size() > 1) {
             let node = this.at(this.size() - 2);
             node.nextNode = null;
